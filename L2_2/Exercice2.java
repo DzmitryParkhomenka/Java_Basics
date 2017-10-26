@@ -6,7 +6,7 @@ public class Exercice2 {
 
 	public static void main(String[] args) {
 		String month = null;
-		int year = 0; 
+		int year = 0;
 		int numDays = 0;
 
 		month = enterMonth(month);
@@ -15,7 +15,7 @@ public class Exercice2 {
 		showDaysNumber(numDays, month);
 	}
 
-	//метод чтения месяца из консоли в переменную month
+	// метод чтения месяца из консоли в переменную month
 	public static String enterMonth(String month) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Month: ");
@@ -23,15 +23,19 @@ public class Exercice2 {
 		return month;
 	}
 
-	//метод чтения месяца из консоли в переменную year
+	// метод чтения месяца из консоли в переменную year
 	public static int enterYear(int year) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Year: ");
+		while (!sc.hasNextInt()) {
+			sc.next();
+			System.out.println("Enter valid year: ");
+		}
 		year = sc.nextInt();
 		return year;
 	}
 
-	//метод определения количества дней в месяце
+	// метод определения количества дней в месяце
 	public static int countDays(int year, int numDays, String month) {
 		switch (month) {
 		case "January":
@@ -55,15 +59,16 @@ public class Exercice2 {
 			else
 				numDays = 28;
 			break;
-		default:
-			System.out.println("Несуществующий месяц");
-			break;
 		}
 		return numDays;
 	}
-	
-	//метод вывода в консоль количества дней
+
+	// метод вывода в консоль количества дней
 	public static void showDaysNumber(int numDays, String month) {
-		System.out.println(month + " has " + numDays + " days");
+		if (numDays != 28 && numDays != 29 && numDays != 30 && numDays != 31) {
+			System.out.println("Несуществующий месяц");
+		} else {
+			System.out.println(month + " has " + numDays + " days");
+		}
 	}
 }
