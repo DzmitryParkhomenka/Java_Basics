@@ -11,7 +11,7 @@ public class Exercice7 {
 		showArray(mas);
 		findMinMax(mas);
 		sortArray(mas);
-		showArray(mas);
+		//showArray(mas);
 	}
 
 	public static void enterArrayFromKeyboard(int[] mas) {
@@ -60,7 +60,8 @@ public class Exercice7 {
 
 		System.out.println("Min element is " + min + " is on " + minIndex + " index.");
 		System.out.println("----------------------------------------------------------------------");
-		System.out.println("Max element is " + max + " is on " + maxIndex + " index.");
+		System.out.println("Max element is " + max);
+		System.out.println("----------------------------------------------------------------------");
 	}
 
 	public static void sortArray(int[] mas) {
@@ -79,7 +80,5 @@ public class Exercice7 {
 			mas[i] = mas[minValueIndex];
 			mas[minValueIndex] = temp;
 		}
-		
-		
 	}
 }
