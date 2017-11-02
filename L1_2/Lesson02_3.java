@@ -6,7 +6,6 @@ public class Lesson02_3 {
 
 	public static void main(String[] args) {
 		int a = 0;
-		double n;
 		int ch = 0;
 
 		Scanner sc = new Scanner(System.in);
@@ -16,7 +15,7 @@ public class Lesson02_3 {
 			a = sc.nextInt();
 		}
 
-		float[] mas = new float[a];
+		double[] mas = new double[a];
 
 		for (int i = 0; i < a; i++) {
 			System.out.print(">");
