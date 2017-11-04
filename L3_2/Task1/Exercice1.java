@@ -8,7 +8,7 @@ public class Exercice1 {
 		int k = 4;
 
 		Fraction[] mas = new Fraction[k];
-		inputFracion(mas, 4);
+		inputFracion(mas, k);
 		showFraction(mas);
 
 	}
