@@ -3,69 +3,41 @@ package by.exercices.dzmitry.parkhomenka.les03_2.ex2;
 public class Exercice2 {
 
 	public static void main(String[] args) {
-		Student s1 = new Student();
-		Student s2 = new Student();
-		Student s3 = new Student();
-		
-		
+		//создание ссылки на обьект типа Group
 		Group group = new Group();
-		Student[] mas = new Student[3];
-		mas[0] = s1;
-		mas[1] = s2;
-		mas[2] = s3;
-		group.studentsGroup = mas;
 		
+		//заполнение массива типа Student созданными ссылками на обьекты типа Student
+		group.spisok[0] = new Student();
+		group.spisok[1] = new Student();
+		group.spisok[2] = new Student();
 		
-		s1.setMark();
-		s2.setMark();
-		s3.setMark();
+		//вызов метода определения средней оценки по группе 
+		int groupAvg = 0;
+		groupAvg = group.avgGroup(group.spisok);
+
+		//вызов метода определения количества студентов имеющих оценки 8, 9, 10
+		int numberOfBest = 0;
+		numberOfBest = group.spisok[0].bestNumber(group.spisok);
 		
+		//вызов метода определения количества студентов имеющих оценку 2
+		int numberOfWorst = 0;
+		numberOfWorst = group.spisok[0].worstNumber(group.spisok);
 		
-		int[] s1Marks = s1.getMark();
-		int[] s2Marks = s2.getMark();
-		int[] s3Marks = s3.getMark();
+		//вывод на консоль среднего балла учебной группы
+		System.out.println("Средняя оценка всей группы - " + groupAvg);
+		System.out.println();
 		
+		//вывод на консоль среднего балла каждого студента + его 3 имеющиеся оценки для наглядности
+		System.out.println("Средняя оценка первого студента - " + group.spisok[0].avgMark() + " -- И его три оценки - " + group.spisok[0].mark1 + " " + group.spisok[0].mark2 + " " +group.spisok[0].mark3);
+		System.out.println("Средняя оценка второго студента - " + group.spisok[1].avgMark() + " -- И его три оценки - " + group.spisok[1].mark1 + " " + group.spisok[1].mark2 + " " +group.spisok[1].mark3);
+		System.out.println("Средняя оценка третьего студента - " + group.spisok[2].avgMark() + " -- И его три оценки - " + group.spisok[2].mark1 + " " + group.spisok[2].mark2 + " " +group.spisok[2].mark3);
+		System.out.println();
 		
-		int avgS1 = s1.avgMark();
-		int avgS2 = s2.avgMark();
-		int avgS3 = s3.avgMark();
+		//вывод количства отличников (студенты имеющие средний балл 8, 9, 10)
+		System.out.println("Количество студентов имеющих средний балл 8, 9, 10 - " + numberOfBest);
+		System.out.println();
 		
-		
-		int grAvg = 0;
-		int grTotal = 0;
-		for (int i = 0; i < mas.length; i++) {
-			grTotal = grTotal + mas[i].avgMark();
-		}
-		
-		grAvg = grTotal / mas.length;
-		
-		
-		int goodStud = 0;
-		for (int i = 0; i < mas.length; i++) {
-			if (mas[i].avgMark() == 5) {
-				goodStud++;
-			}
-		}
-		
-		int badStud = 0;
-		int badStudCount = 0;
-		for (int i = 0; i < mas.length; i++) {
-			int[] allMarks = mas[i].getMark();
-			int count = 0;
-			for (int j = 0; j < allMarks.length; j++) {
-				if (allMarks[j] == 2 && count == 0) {
-					badStud++;
-					count++;
-				}
-				if (badStud > 0) {
-					badStudCount++;
-				}
-			}
-		}
-		
-		System.out.println("Средний балл по группе - " + grAvg);
-		System.out.println("Средний балл студента 1 - " + avgS1 + ", средний балл студента 2 - " + avgS2 + ", средний балл студента 3 - " + avgS3);
-		System.out.println("Число отличников - " + goodStud);
-		System.out.println("Количество студентов имеющих 0, 1, 2 - " + badStudCount);
+		//вывод количества студентов имеющих оценки 2 и ниже
+		System.out.println("Количество студентов имеющих оценки 2 и ниже - " + numberOfWorst);
 	}
 }
