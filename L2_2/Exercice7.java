@@ -11,7 +11,7 @@ public class Exercice7 {
 		showArray(mas);
 		findMinMax(mas);
 		sortArray(mas);
-		//showArray(mas);
+		showArray(mas);
 	}
 
 	public static void enterArrayFromKeyboard(int[] mas) {
