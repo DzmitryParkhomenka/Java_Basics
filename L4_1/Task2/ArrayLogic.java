@@ -15,18 +15,22 @@ public class ArrayLogic {
 	public int[][] sortDoubleArray(int[][] mas) {
 		for (int i = 0; i < mas.length; i++) {
 			for (int j = 0; j < mas[i].length; j++) {
-				for (int m = 0; m < mas.length; m++) {
-					for (int n = 0; n < mas[m].length; n++) {
-						if (mas[n][m] > mas[j][i]) {
-							int temp = mas[n][m];
-							mas[n][m] = mas[j][i];
-							mas[j][i] = temp;
-						}
-					}
-				}
+				sortDouble(mas, i, j);	
 			}
 		}
 		return mas;
+	}
+	
+	private void sortDouble(int[][] mas, int i, int j){
+		for (int m = 0; m < mas.length; m++) {
+			for (int n = 0; n < mas[m].length; n++) {
+				if (mas[n][m] > mas[j][i]) {
+					int temp = mas[n][m];
+					mas[n][m] = mas[j][i];
+					mas[j][i] = temp;
+				}
+			}
+		}
 	}
 
 	//вывод массива на консоль
