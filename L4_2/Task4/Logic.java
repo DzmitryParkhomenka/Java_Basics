@@ -5,13 +5,17 @@ import java.util.ArrayList;
 public class Logic {
 	public void passOrNot(ArrayList<Abiturient> abiturient, int size) {
 		if (abiturient.size() <= size) {
-			System.out.println("Following students have passed exams: ");
+				passedMessage();
 			for (int i = 0; i < abiturient.size(); i++) {
 				showPassedAbitur(abiturient, i);
 			}
 		} else {
 			needClarification();
 		}
+	}
+	
+	private static void passedMessage() {
+		System.out.println("Following students have passed exams: ");
 	}
 	
 	private static void showPassedAbitur(ArrayList<Abiturient> abiturient, int i) {
