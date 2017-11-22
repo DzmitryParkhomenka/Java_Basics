@@ -15,7 +15,7 @@ public class Logic {
 	}
 	
 	private static void showPassedAbitur(ArrayList<Abiturient> abiturient, int i) {
-		System.out.println(abiturient.get(i));
+		System.out.println(abiturient.get(i).getName());
 	}
 	
 	private static void needClarification() {
