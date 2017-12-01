@@ -7,8 +7,6 @@ public class Payment {
 		purchaseBill.addPurchaseToBill(new Product("Java Book", 90));
 		purchaseBill.addPurchaseToBill(new Product("Clean Code Book", 30));
 		purchaseBill.addPurchaseToBill(new Product("Algorythms and Data Structure Book", 50));
-		//purchaseBill.countTotalPurchasePrice();
-		//purchaseBill.showTotalPriceToConsole();
 		PaymentFunctions paymentProcess = new PaymentFunctions();
 		int totalPriceOfPurchases = paymentProcess.countTotalPurchasePrice(purchaseBill.getNumberOfPurchases());
 		paymentProcess.showTotalPriceToConsole(totalPriceOfPurchases);
