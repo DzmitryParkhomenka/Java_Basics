@@ -24,7 +24,8 @@ public class BookList {
 		for (Book book: bookList) {
 			if  (book.getBookName().equals(name)) {
 				return book;
-			}
+			} else {
+				System.out.println("Book has not been found");
 		}
 		return null;
 	}
